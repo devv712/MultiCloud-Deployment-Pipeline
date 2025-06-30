@@ -1,0 +1,6 @@
+Show a live preview of the pipeline dashboard with key metrics
+
+Adds a dashboard preview, fixes API error handling, and updates tsconfig.json.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: 8fa8fb73-4691-42c1-814d-a75bcfbda7f7
