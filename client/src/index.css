@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.0%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 94.0%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent-foreground));
+}
+
+/* Status indicators */
+.status-success {
+  @apply text-green-400 bg-green-400/10 border-green-400/20;
+}
+
+.status-running {
+  @apply text-blue-400 bg-blue-400/10 border-blue-400/20 animate-pulse;
+}
+
+.status-failed {
+  @apply text-red-400 bg-red-400/10 border-red-400/20;
+}
+
+.status-pending {
+  @apply text-yellow-400 bg-yellow-400/10 border-yellow-400/20;
+}
+
+.status-cancelled {
+  @apply text-gray-400 bg-gray-400/10 border-gray-400/20;
+}
+
+/* Cloud provider colors */
+.cloud-aws {
+  @apply text-orange-400 bg-orange-400/10 border-orange-400/20;
+}
+
+.cloud-gcp {
+  @apply text-blue-400 bg-blue-400/10 border-blue-400/20;
+}
+
+.cloud-azure {
+  @apply text-blue-500 bg-blue-500/10 border-blue-500/20;
+}
+
+/* Environment indicators */
+.env-production {
+  @apply text-red-400 bg-red-400/10 border-red-400/20;
+}
+
+.env-staging {
+  @apply text-yellow-400 bg-yellow-400/10 border-yellow-400/20;
+}
+
+.env-development {
+  @apply text-green-400 bg-green-400/10 border-green-400/20;
+}
+
+/* Deployment strategy indicators */
+.strategy-canary {
+  @apply text-purple-400 bg-purple-400/10 border-purple-400/20;
+}
+
+.strategy-blue-green {
+  @apply text-cyan-400 bg-cyan-400/10 border-cyan-400/20;
+}
+
+.strategy-rolling {
+  @apply text-indigo-400 bg-indigo-400/10 border-indigo-400/20;
+}
+
+.strategy-recreate {
+  @apply text-gray-400 bg-gray-400/10 border-gray-400/20;
+}
+
+/* Alert severity */
+.alert-critical {
+  @apply text-red-400 bg-red-400/10 border-red-400/20;
+}
+
+.alert-warning {
+  @apply text-yellow-400 bg-yellow-400/10 border-yellow-400/20;
+}
+
+.alert-info {
+  @apply text-blue-400 bg-blue-400/10 border-blue-400/20;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Metric indicators */
+.metric-healthy {
+  @apply text-green-400;
+}
+
+.metric-warning {
+  @apply text-yellow-400;
+}
+
+.metric-critical {
+  @apply text-red-400;
+}
+
+/* Progress bars */
+.canary-progress {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500;
+}
+
+/* Grid patterns */
+.dashboard-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Terminal/log styling */
+.terminal {
+  @apply bg-black text-green-400 font-mono text-sm p-4 rounded-lg;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+}
+
+.log-entry {
+  @apply py-1 border-l-2 border-transparent pl-3;
+}
+
+.log-entry.log-error {
+  @apply border-red-400 bg-red-400/5;
+}
+
+.log-entry.log-warning {
+  @apply border-yellow-400 bg-yellow-400/5;
+}
+
+.log-entry.log-info {
+  @apply border-blue-400 bg-blue-400/5;
+}
+
+.log-entry.log-success {
+  @apply border-green-400 bg-green-400/5;
+}
