@@ -1,0 +1,14 @@
+🚀 DevOps Pipeline Dashboard running on port 3000
+📡 WebSocket endpoint: ws://localhost:3000/ws
+🔧 API endpoints available:
+   GET  /api/health - System health check
+   GET  /api/pipelines - CI/CD pipeline status
+   GET  /api/deployments - Deployment tracking
+   GET  /api/alerts - Alert management
+   GET  /api/infrastructure - Infrastructure monitoring
+   POST /api/deployments/:id/simulate-canary - Canary progression (25%→50%→75%→100%)
+   POST /api/deployments/:id/simulate-blue-green - Blue-green deployment (test/switch)
+   POST /api/deployments/:id/simulate-rolling - Rolling update progression
+   POST /api/deployments/:id/rollback - Deployment rollback
+
+✨ Advanced deployment strategies: Canary, Blue-Green, Rolling deployments!

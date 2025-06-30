@@ -1,0 +1,34 @@
+🚀 DevOps Pipeline Dashboard running on port 3000
+📡 WebSocket endpoint: ws://localhost:3000/ws
+🔧 API endpoints available:
+   GET  /api/health - System health check
+   GET  /api/pipelines - CI/CD pipeline status
+   GET  /api/deployments - Deployment tracking
+   GET  /api/alerts - Alert management
+   GET  /api/infrastructure - Infrastructure monitoring
+   GET  /api/cost-analysis - Complete cost analysis across providers
+   GET  /api/cost-analysis/summary - Cost summary and totals
+   GET  /api/cost-analysis/by-provider - Provider-specific cost breakdown
+   GET  /api/cost-analysis/trends - Historical trends and forecasting
+   GET  /api/cost-analysis/optimization - Cost optimization recommendations
+   GET  /api/cost-analysis/budgets - Budget monitoring and alerts
+   GET  /api/compliance/frameworks - Available compliance frameworks
+   GET  /api/compliance/controls/:frameworkId - Framework-specific controls
+   GET  /api/compliance/assessments - Compliance assessments and progress
+   GET  /api/compliance/reports - Generated compliance reports
+   POST /api/compliance/generate-checklist - Automated compliance checklist
+   POST /api/compliance/assessments - Create new compliance assessment
+   POST /api/compliance/generate-report - Generate compliance report
+   POST /api/deployments/:id/simulate-canary - Canary progression (25%→50%→75%→100%)
+   POST /api/deployments/:id/simulate-blue-green - Blue-green deployment (test/switch)
+   POST /api/deployments/:id/simulate-rolling - Rolling update progression
+   POST /api/cost-analysis/recommendations/:id/apply - Apply cost optimization
+   POST /api/cost-analysis/simulate-cost-spike - Simulate cost increases
+   POST /api/deployments/:id/rollback - Deployment rollback
+
+🔒 Automated compliance: SOC 2, PCI DSS, GDPR, HIPAA, ISO 27001 with checklist generation!
+📋 Compliance Checklist Generated: SOC 2 Type II (3 controls)
+📋 Compliance Checklist Generated: PCI DSS (2 controls)
+🔍 Compliance Assessment Created: GDPR Annual Assessment 2025
+✅ Compliance Control Updated: soc2-cc6.1 -> compliant
+📄 Compliance Report Generated: SOC 2 Type II Compliance Report (7% compliant)
