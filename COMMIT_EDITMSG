@@ -1,6 +1,7 @@
-Show a live preview of the pipeline dashboard with key metrics
+Improve stability and debug all of the DevOps dashboard sidebar options
 
-Adds a dashboard preview, fixes API error handling, and updates tsconfig.json.
+Adds debugging statements and error handling to sidebar pages; adds a test app.
 
 Replit-Commit-Author: Agent
-Replit-Commit-Session-Id: 8fa8fb73-4691-42c1-814d-a75bcfbda7f7
+Replit-Commit-Session-Id: db6923fd-9f46-4688-baca-ced7353b0670
+Replit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/0406f99f-14c0-4fac-bb2c-4bebeb5bf4c4/4e26d9f4-7ab6-4c49-b297-f060c0f905d2.jpg

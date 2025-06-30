@@ -1,124 +1,115 @@
-# DevOps Pipeline Dashboard - Multi-Cloud CI/CD Monitoring
+# DevOps Monitoring Dashboard
 
 ## Overview
 
-A comprehensive DevOps pipeline monitoring dashboard that simulates multi-cloud CI/CD with canary deployments and real-time observability. This full-stack application provides enterprise-grade monitoring capabilities for modern DevOps workflows.
+This repository contains a Streamlit-based DevOps monitoring dashboard that provides comprehensive insights into CI/CD pipelines, deployments, alerts, and canary deployments. The application is designed to simulate realistic DevOps monitoring scenarios with interactive visualizations and real-time data updates.
 
 ## System Architecture
 
+The system follows a modular Streamlit application architecture:
+
 ### Frontend Architecture
-- **Technology stack**: React 18 with TypeScript, Tailwind CSS, Vite
-- **Component structure**: Modular component architecture with reusable UI components
-- **State management**: TanStack Query for server state, React hooks for local state
-- **Real-time updates**: WebSocket integration for live monitoring
-- **Routing**: Wouter for client-side routing
+- **Framework**: Streamlit for web-based dashboard interface
+- **Visualization**: Plotly Express and Plotly Graph Objects for interactive charts
+- **Layout**: Multi-page application with sidebar navigation
+- **State Management**: Streamlit session state with caching for performance
 
 ### Backend Architecture
-- **Framework**: Express.js with TypeScript
-- **API design**: RESTful API with WebSocket support for real-time updates
-- **Server configuration**: Express with CORS, WebSocket server integration
-- **Storage**: In-memory storage with comprehensive seeded data
+- **Data Layer**: Mock data generation with realistic patterns
+- **Business Logic**: Metrics calculation engine
+- **Structure**: Utility classes for data generation and metrics computation
+
+### Key Design Decisions
+- **Problem**: Need for realistic DevOps monitoring simulation
+- **Solution**: Mock data generators with configurable patterns
+- **Rationale**: Allows demonstration without requiring actual DevOps infrastructure
+- **Pros**: Easy setup, controllable data patterns, no external dependencies
+- **Cons**: Simulated data only, requires enhancement for production use
 
 ## Key Components
 
-### Dashboard Features
-1. **Multi-Cloud Pipeline Monitoring**: Real-time CI/CD pipeline status across AWS, GCP, and Azure
-2. **Canary Deployment Tracking**: Progressive deployment monitoring with automatic rollback capabilities
-3. **Infrastructure Management**: Multi-cloud resource monitoring with cost tracking
-4. **Alert System**: Real-time alerting with severity-based categorization
-5. **Performance Monitoring**: Live metrics dashboard with SLA compliance tracking
+### Core Application (`app.py`)
+- Main dashboard entry point
+- Environment and time range filtering
+- Auto-refresh functionality
+- Data generator and metrics calculator initialization
 
-### Core Pages
-- **Dashboard**: Overview with key metrics, trends, and recent activity
-- **Pipelines**: CI/CD pipeline management and execution history
-- **Deployments**: Canary deployment monitoring with simulation capabilities
-- **Infrastructure**: Multi-cloud resource management and cost analysis
-- **Alerts**: Alert management with resolution workflows
-- **Monitoring**: Real-time performance metrics and observability
+### Page Modules
+- **Pipeline Overview** (`pages/pipeline_overview.py`): CI/CD pipeline monitoring
+- **Deployments** (`pages/deployments.py`): Deployment tracking and analysis
+- **Alerts** (`pages/alerts.py`): Alert management and MTTR calculation
+- **Canary Deployments** (`pages/canary.py`): Canary deployment monitoring
+
+### Utility Layer
+- **Data Generator** (`utils/data_generator.py`): Realistic mock data creation
+- **Metrics Calculator** (`utils/metrics.py`): DevOps KPI calculations
 
 ## Data Flow
 
-### Real-time Architecture
-- WebSocket connections provide live updates for pipeline status, deployment progress, and alerts
-- React Query manages server state with automatic cache invalidation
-- Backend broadcasts events for pipeline runs, deployment updates, and system alerts
+1. **User Interaction**: User selects environment and time range filters
+2. **Data Generation**: Mock data generated based on realistic patterns
+3. **Metrics Calculation**: KPIs computed from generated data
+4. **Visualization**: Interactive charts and metrics displayed
+5. **Real-time Updates**: Optional auto-refresh for live monitoring simulation
 
-### API Endpoints
-- Pipeline management: `/api/pipelines`
-- Deployment tracking: `/api/deployments` with canary simulation
-- Infrastructure monitoring: `/api/infrastructure`
-- Alert management: `/api/alerts`
-- Real-time metrics: WebSocket at `/ws`
+### Data Models
+- **Pipeline Data**: Build status, duration, environment, timestamps
+- **Deployment Data**: Service versions, environments, success rates
+- **Alert Data**: Severity levels, status, resolution times
+- **Canary Data**: Traffic splitting, version comparison, rollout progress
 
 ## External Dependencies
 
 ### Core Libraries
-- **Frontend**: React, TypeScript, Tailwind CSS, TanStack Query, Recharts, Lucide Icons
-- **Backend**: Express, WebSocket, Zod validation, CORS
-- **Development**: Vite, PostCSS, class-variance-authority
+- **streamlit**: Web dashboard framework
+- **pandas**: Data manipulation and analysis
+- **plotly**: Interactive visualization library
+- **numpy**: Numerical computing
 
-### Simulated Services
-- Multi-cloud infrastructure (AWS EKS, GCP GKE)
-- CI/CD pipeline execution
-- Canary deployment progression
-- Health check monitoring
-- Cost tracking and optimization
+### Visualization Stack
+- Plotly Express for quick statistical charts
+- Plotly Graph Objects for custom visualizations
+- Streamlit native components for metrics and controls
 
 ## Deployment Strategy
 
-The application uses Replit's integrated development environment with:
-- Vite dev server for frontend development
-- Express server for API and WebSocket services
-- Real-time hot reloading for development
-- Production-ready build configuration
+### Current Setup
+- Single-file Streamlit application
+- Local development with `streamlit run app.py`
+- No external database requirements
 
-## Recent Changes
-
-### June 29, 2025 - Automated Compliance Checklist Generator Implementation
-- Built comprehensive compliance framework support for SOC 2, PCI DSS, GDPR, HIPAA, and ISO 27001
-- Implemented automated control prioritization based on risk levels and compliance status
-- Added intelligent team assignment and effort estimation for compliance controls
-- Created timeline generation with dependency mapping and project phases
-- Integrated real-time assessment progress tracking and WebSocket notifications
-- Added automated compliance report generation with findings and recommendations
-- Implemented control status management with evidence tracking and audit trails
-
-### June 29, 2025 - Multi-Cloud Cost Analysis Dashboard Implementation
-- Built comprehensive cost tracking across AWS, GCP, and Azure cloud providers
-- Implemented service-level and region-level cost breakdown with percentage analysis
-- Added historical trend analysis and forecasting capabilities
-- Created automated optimization recommendations with potential savings tracking
-- Integrated budget monitoring with configurable warning and critical thresholds
-- Added real-time cost spike detection and alerting system
-- Implemented cost optimization application with ROI tracking
-
-### June 29, 2025 - Advanced Deployment Strategies Implementation
-- Added blue-green deployment simulation with environment testing and instant traffic switching
-- Implemented rolling deployment with pod-by-pod updates and batch progression
-- Enhanced canary deployment with health monitoring and progressive traffic routing
-- Created comprehensive API endpoints for all three deployment strategies
-- Added real-time WebSocket updates for deployment progression events
-- Integrated multi-cloud support across AWS EKS, GCP GKE, and Azure AKS
-
-### June 29, 2025 - Comprehensive DevOps Dashboard Implementation
-- Created full-stack multi-cloud CI/CD monitoring dashboard
-- Implemented real-time WebSocket communication for live updates
-- Built canary deployment simulation with automatic rollback
-- Added comprehensive infrastructure monitoring with cost tracking
-- Integrated alert management system with severity-based workflows
-- Created performance monitoring dashboard with SLA compliance
-- Established modular component architecture with TypeScript
-- Implemented in-memory data storage with realistic seeded data
-
-## Changelog
-
-- June 29, 2025: Complete DevOps Pipeline Dashboard implementation
-- June 29, 2025: Initial project setup
+### Scalability Considerations
+- **Problem**: Mock data limits real-world applicability
+- **Future Enhancement**: Integration with actual CI/CD systems
+- **Alternatives**: Database integration, API connections to Jenkins/GitLab/GitHub
+- **Deployment Options**: Streamlit Cloud, Docker containers, cloud platforms
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
 
----
+## Changelog
 
-*Note: This documentation will be updated as the project develops and architectural decisions are made.*
+```
+Changelog:
+- June 30, 2025. Initial setup
+```
+
+## Architecture Notes
+
+### Performance Optimizations
+- Streamlit caching decorators for data generators
+- Efficient pandas operations for data processing
+- Lazy loading of visualizations
+
+### Extensibility
+- Modular page structure for easy feature addition
+- Configurable data patterns in generators
+- Pluggable metrics calculation system
+
+### Monitoring Capabilities
+- Real-time dashboard simulation
+- Multiple environment support
+- Comprehensive DevOps metrics (MTTR, deployment frequency, success rates)
+- Alert management with severity classification
+- Canary deployment progress tracking
